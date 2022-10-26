@@ -6,7 +6,7 @@
 [![Coverage](https://codecov.io/gh/czimm79/MagneticColloids.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/czimm79/MagneticColloids.jl)
 
 
-This package implements equations in Julia for the field, force, and energy of paramagnetic colloidal beads. The main two literature sources used are Abbott 2020 [^1] and Spatafora-Salazar 2021 [^2].
+This package implements equations in Julia for the field, force, and energy of paramagnetic colloidal beads. The main two literature sources used are Abbott 2020[^1] and Spatafora-Salazar 2021[^2].
 
 
 [^1]: Abbott, J. J., Diller, E. & Petruska, A. J. Magnetic Methods in Robotics. Annu. Rev. Control Robot. Auton. Syst. 3, annurev-control-081219-082713 (2020).
