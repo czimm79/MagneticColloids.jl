@@ -3,6 +3,7 @@ using Test
 using Unitful, LinearAlgebra
 
 @testset "MagneticColloids.jl" begin
+    # note: I use ≈, or isapprox, for almost all tests. Can be typed with \approx <tab>
     # setup
     test_r = [5, 0.0]u"µm"
     test_m = [2.00664e-13, 0.0]u"A*m^2"
@@ -24,10 +25,10 @@ using Unitful, LinearAlgebra
         # 1D test
         literature = Bₓ_lit(test_r[1], test_m[1], 0) |> u"mT"  # x coordinate
         magmethods = B_magmethods(test_r, test_m)[1]  # x coordinate
-        @test isapprox(literature, magmethods)
+        @test literature ≈ magmethods
         
         # nD test
-        @test isapprox(B_magmethods(test_r, test_m), B(test_r, test_m))
+        @test B_magmethods(test_r, test_m) ≈ B(test_r, test_m)
     end
 
     @testset "Force" begin
@@ -42,7 +43,7 @@ using Unitful, LinearAlgebra
             return prefactor * A .|> upreferred
         end
         
-        @test isapprox(f(test_r, test_m, test_m), f_biswal(test_r, test_m, test_m))
+        @test f(test_r, test_m, test_m) ≈ f_biswal(test_r, test_m, test_m)
     end
 end
 
